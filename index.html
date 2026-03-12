@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="id">
 
@@ -20,140 +19,170 @@
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 
     <style>
-        .hero{
-        position:relative;
-        z-index:10;
-        }   
-       
-       .menu a{
-            font-family: Arial, sans-serif;  /* tambahkan ini */
-            text-decoration:none;
-            text-align:center;
-            color:#1a1a1a;
-            font-size:16px;
-            flex: none; 
-            width: auto;          /* Lebar mengikuti isi */
-            min-width: 80px;
-            text-align:center;
-            letter-spacing:0.5px;
-            font-weight:600;
-            padding:10px 14px; /* mengatur ukuran tombol */
-            border-radius:20px; /* membuat oval */
-            border:1px solid rgb(143,125,96);
-            background:linear-gradient(135deg,#8c6a2f,#caa24c,#6f5223);
-            text-shadow:0 1px 1px rgba(255,255,255,0.4);
-            transition:0.3s;
-            display:inline-block;
+        .hero {
+            position: relative;
+            z-index: 10;
         }
-
-     
-
-        .hero{
-            background:url("bg-undangan.jpg") center/cover no-repeat;
-            min-height:100vh;
-            background-attachment:fixed;
-            display:flex;
-            flex-direction:column;
-            justify-content:center;
-            align-items:center;
-        }
-        
-       .menu{
-            width:100%;
-            background: rgba(90,60,30,0.7); /* sama dengan isi */
-            backdrop-filter:blur(6px); /* efek kaca (optional tapi bagus) */
-            padding:8px 5px;
-            display:flex;
-            justify-content:center;
-            gap:10px;
-            position:sticky;
-            top:0;
-            left:0;
-            z-index: 1000;
-            border-radius:10px;
-            flex-wrap:wrap;
-        }
-       
-        .menu a.active{
-            background: rgba(105,76,13,0.4);
-            color:#D4AF37;
-        }
-
-
-     .menu a:hover{
-            background: rgba(90,60,30,0.7);
-            color:#000;
+        /* ===== FORMAT UCAPAN ===== */
+        .ucapan-item{
+border-bottom:1px solid #ddd;
+padding:12px 0;
+text-align:left;
 }
-      
 
-            @keyframes jatuh{
-            0%{
-            transform:translateY(-50px);
+.ucapan-nama{
+font-weight:bold;
+font-size:16px;
+}
+
+.ucapan-hadir{
+font-size:13px;
+color:#666;
+margin-top:2px;
+}
+
+.ucapan-pesan{
+margin-top:6px;
+font-size:15px;
+}
+
+        .menu a {
+            font-family: Arial, sans-serif;
+            /* tambahkan ini */
+            text-decoration: none;
+            text-align: center;
+            color: #1a1a1a;
+            font-size: 16px;
+            flex: none;
+            width: auto;
+            /* Lebar mengikuti isi */
+            min-width: 80px;
+            text-align: center;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+            padding: 10px 14px;
+            /* mengatur ukuran tombol */
+            border-radius: 20px;
+            /* membuat oval */
+            border: 1px solid rgb(143, 125, 96);
+            background: linear-gradient(135deg, #8c6a2f, #caa24c, #6f5223);
+            text-shadow: 0 1px 1px rgba(255, 255, 255, 0.4);
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+
+
+        .hero {
+            background: url("bg-undangan.jpg") center/cover no-repeat;
+            min-height: 100vh;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .menu {
+            width: 100%;
+            background: rgba(90, 60, 30, 0.7);
+            /* sama dengan isi */
+            backdrop-filter: blur(6px);
+            /* efek kaca (optional tapi bagus) */
+            padding: 8px 5px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            position: sticky;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            border-radius: 10px;
+            flex-wrap: wrap;
+        }
+
+        .menu a.active {
+            background: rgba(105, 76, 13, 0.4);
+            color: #D4AF37;
+        }
+
+
+        .menu a:hover {
+            background: rgba(90, 60, 30, 0.7);
+            color: #000;
+        }
+
+
+        @keyframes jatuh {
+            0% {
+                transform: translateY(-50px);
             }
 
-            100%{
-            transform:translateY(100vh);
+            100% {
+                transform: translateY(100vh);
             }
-            }
-                    .amplop{
-            width:300px;
-            height:200px;
-            background:#caa24c;
-            position:relative;
-            cursor:pointer;
-            border-radius:6px;
-            box-shadow:0 10px 20px rgba(0,0,0,0.3);
-            }
+        }
 
-          .tutup{
-            position:absolute;
-            top:0;
-            left:0;
-            width:100%;
-            height:100px;
-            background:#b48a5a;
-            clip-path:polygon(0 0,100% 0,50% 100%);
+        .amplop {
+            width: 300px;
+            height: 200px;
+            background: #caa24c;
+            position: relative;
+            cursor: pointer;
+            border-radius: 6px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .tutup {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: #b48a5a;
+            clip-path: polygon(0 0, 100% 0, 50% 100%);
             transition: transform 0.8s ease;
-            transform-origin:top;
-            }
+            transform-origin: top;
+        }
 
-            .amplop{
-            transform-style:preserve-3d;
-            transition:transform 0.5s;
-            }
+        .amplop {
+            transform-style: preserve-3d;
+            transition: transform 0.5s;
+        }
 
-            .amplop:hover{
-            transform:scale(1.05);
-            }
+        .amplop:hover {
+            transform: scale(1.05);
+        }
 
-            .amplop.buka .tutup{
-            transform:rotateX(180deg);
-            }
+        .amplop.buka .tutup {
+            transform: rotateX(180deg);
+        }
 
-            .amplop.buka .tutup{
-            transform:rotateX(180deg);
-            }
+        .amplop.buka .tutup {
+            transform: rotateX(180deg);
+        }
 
-            .isi-amplop{
-            position:absolute;
-            width:100%;
-            height:100%;
-            display:flex;
-            flex-direction:column;
-            justify-content:center;
-            align-items:center;
-            color:white;
-            text-align:center;
-            padding:10px;
-            }
-                    html{
-            scroll-behavior:smooth;
-            }
-       
+        .isi-amplop {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
 
-        
+        html {
+            scroll-behavior: smooth;
+        }
 
-      
+
+
+
+
         .close-btn {
             display: inline-block;
             text-align: center;
@@ -241,8 +270,9 @@
             background: #caa24c;
             color: rgb(20, 15, 15);
         }
-        h3{
-        font-size:22px;
+
+        h3 {
+            font-size: 22px;
         }
 
         h5 {
@@ -306,11 +336,11 @@
         }
 
         .container {
-            width:100%;
-            max-width:1100px;
-            margin:auto;
-            padding:20px;
-            text-align:center;
+            width: 100%;
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+            text-align: center;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
@@ -318,16 +348,17 @@
 
         #isi {
             background:
-            linear-gradient(rgba(255,242,230,0.7), rgba(248,211,173,0.3)),
-            url("bg-undangan.jpg");
-            font-size:16px;
-            line-height:1.6;
+                linear-gradient(rgba(255, 242, 230, 0.7), rgba(248, 211, 173, 0.3)),
+                url("bg-undangan.jpg");
+            font-size: 16px;
+            line-height: 1.6;
             background-size: cover;
-            background-position:center;
+            background-position: center;
             background-attachment: fixed;
-            display:none;
-            padding:60px 20px;
+            display: none;
+            padding: 60px 20px;
         }
+
         #cover {
             height: 100vh;
             background-image: url("cover.jpg");
@@ -340,7 +371,7 @@
             color: white;
         }
 
-      body {
+        body {
             margin: 0;
             font-family: 'Playfair Display', serif;
             text-align: center;
@@ -349,7 +380,7 @@
             background-position: center;
             background-attachment: fixed;
         }
-     
+
 
         .nama {
             font-family: 'Great Vibes', cursive;
@@ -359,7 +390,7 @@
             color: #b48a5a;
             margin: 20px 0;
             -webkit-text-stroke: 0.7px #000000;
-          
+
             text-shadow:
                 2px 2px 8px rgba(0, 0, 0, 0.7),
                 0 0 10px rgba(0, 0, 0, 0.4);
@@ -386,15 +417,16 @@
             font-size: 40px;
             margin-bottom: 20px;
         }
-       .hero{
-            width:100%;
-            min-height:100vh;
-            background:url("bg-undangan.jpg") center/cover no-repeat;
-            background-attachment:scroll;
-            background-position:center;
-            background-repeat:no-repeat;
-            background-size:cover;
-            padding:60px 20px;
+
+        .hero {
+            width: 100%;
+            min-height: 100vh;
+            background: url("bg-undangan.jpg") center/cover no-repeat;
+            background-attachment: scroll;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding: 60px 20px;
         }
 
         .open-btn {
@@ -416,132 +448,154 @@
             padding: 30px;
         }
 
-    
+
         .gallery {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 15px;
-          
-        }
-       .gallery img{
-            width:260px;
-            height:180px;
-            object-fit:cover; /* foto menyesuaikan tanpa gepeng */
-            border-radius:12px;
-            cursor:pointer;
-            transition:0.4s;
 
-            border:3px solid transparent;
+        }
+
+        .gallery img {
+            width: 260px;
+            height: 180px;
+            object-fit: cover;
+            /* foto menyesuaikan tanpa gepeng */
+            border-radius: 12px;
+            cursor: pointer;
+            transition: 0.4s;
+
+            border: 3px solid transparent;
 
             /* efek outline emas metallic */
             background:
-            linear-gradient(white, white) padding-box,
-            linear-gradient(135deg,#8c6a2f,#d4af37,#fff1b0,#caa24c,#6f5223) border-box;
+                linear-gradient(white, white) padding-box,
+                linear-gradient(135deg, #8c6a2f, #d4af37, #fff1b0, #caa24c, #6f5223) border-box;
         }
-        .foto{
-            width:260px;
-            background:#111;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            border-radius:12px;
-            overflow:hidden;
+
+        .foto {
+            width: 260px;
+            background: #111;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            overflow: hidden;
 
             /* outline emas metallic */
-            border:3px solid transparent;
+            border: 3px solid transparent;
             background:
-            linear-gradient(#111,#111) padding-box,
-            linear-gradient(135deg,#8c6a2f,#d4af37,#fff1b0,#caa24c,#6f5223) border-box;
-            }
+                linear-gradient(#111, #111) padding-box,
+                linear-gradient(135deg, #8c6a2f, #d4af37, #fff1b0, #caa24c, #6f5223) border-box;
+        }
 
-        .foto img{
-            width:100%;
-            height:auto; 
-            display:block;
-          
-            }
+        .foto img {
+            width: 100%;
+            height: auto;
+            display: block;
 
-        @media (max-width:768px){
+        }
 
-        .foto{
-            width:45%;
+        @media (max-width:768px) {
+
+            .foto {
+                width: 45%;
             }
 
         }
 
 
 
-        .gallery img:hover{
-            transform:scale(1.06);
+        .gallery img:hover {
+            transform: scale(1.06);
 
             box-shadow:
-            0 0 10px rgba(212,175,55,0.7),
-            0 0 20px rgba(202,162,76,0.6),
-            0 0 30px rgba(140,106,47,0.4);
+                0 0 10px rgba(212, 175, 55, 0.7),
+                0 0 20px rgba(202, 162, 76, 0.6),
+                0 0 30px rgba(140, 106, 47, 0.4);
         }
+
         /* LIGHTBOX */
 
-        .lightbox{
-            position:fixed;
-            top:0;
-            left:0;
-            width:100%;
-            height:100%;
-            background:rgba(0,0,0,0.8);
-            display:none;
-            justify-content:center;
-            align-items:center;
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
         }
 
-        .lightbox img{
-            max-width:90%;
-            max-height:90%;
-            border-radius:10px;
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
         }
 
 
         button {
             padding: 12px 20px;
-            font-size:16px
-            background: #b48a5a;
+            font-size: 16px background: #b48a5a;
             color: white;
             border: none;
             border-radius: 20px;
             cursor: pointer;
         }
-      
-</style>
+        .ucapan-item{
+border-bottom:1px solid #ddd;
+padding:12px 0;
+text-align:left;
+}
+
+.ucapan-nama{
+font-weight:bold;
+font-size:16px;
+}
+
+.ucapan-pesan{
+margin-top:5px;
+font-size:15px;
+}
+.ucapan-pesan{
+margin-top:6px;
+font-size:15px;
+font-style: italic;
+}
+    </style>
 </head>
 
 <body>
-        
-    
-        <div class="cover" id="cover">
 
-<div class="amplop" onclick="Open()">
 
-<div class="tutup"></div>
+    <div class="cover" id="cover">
 
-<div class="isi-amplop">
-<h2>Undangan Pernikahan</h2>
-<p>Kepada Yth</p>
-<p id="namaTamu">Tamu Undangan</p>
-<p>(Klik Amplop)</p>
-</div>
+        <div class="amplop" onclick="Open()">
 
-</div>
+            <div class="tutup"></div>
+
+            <div class="isi-amplop">
+                <h2>Undangan Pernikahan</h2>
+                <p>Kepada Yth</p>
+                <p id="namaTamu">Tamu Undangan</p>
+                <p>(Klik Amplop)</p>
+            </div>
 
         </div>
 
-        <!-- COVER -->
+    </div>
 
-   
+    <!-- COVER -->
 
-        <!-- KONTEN -->
 
-        <div id="isi">
-   
+
+    <!-- KONTEN -->
+
+    <div id="isi">
+
         <div class="menu">
 
             <a href="#home">Home</a>
@@ -551,23 +605,24 @@
             <a href="#penutup">Penutup</a>
 
         </div>
-            <h3 id="home">Mohon Do'a & Restu </h3>
-            <p>
+        <h3 id="home">Mohon Do'a & Restu </h3>
+        <p>
             Dengan penuh rasa syukur kami mengundang Bapak/Ibu/Saudara/i
             untuk hadir di acara pernikahan kami.
-            </p>
+        </p>
 
-            <div class="nama">Refly Febriyanto 
-                <br> 
-                & 
-                <br>
-                Siti Aminah</div>
-            <h5>Akan melangsungkan resepsi pernikahan pada:</h5>
-            <p class="tanggal">13 April 2026</p>
-            <p>Akad Nikah : 09.00 WIB</p>
-            <p>Resepsi : 10.00 WIB - Selesai</p>
-            <p>Lokasi : Gedung Serbaguna</p>
-          
+        <div class="nama">Refly Febriyanto
+            <br>
+            &
+            <br>
+            Siti Aminah
+        </div>
+        <h5>Akan melangsungkan resepsi pernikahan pada:</h5>
+        <p class="tanggal">13 April 2026</p>
+        <p>Akad Nikah : 09.00 WIB</p>
+        <p>Resepsi : 10.00 WIB - Selesai</p>
+        <p>Lokasi : Gedung Serbaguna</p>
+
 
 
 
@@ -592,107 +647,119 @@
                 <span id="seconds">0</span>
                 <p>detik</p>
             </div>
-            
+
 
         </div>
-          
-            <h3 id="galeri">Galeri Foto</h3>
 
-            <div id="lightbox" class="lightbox">
+        <h3 id="galeri">Galeri Foto</h3>
+
+        <div id="lightbox" class="lightbox">
             <img id="lightbox-img">
-            </div>
+        </div>
 
         <div class="gallery">
             <div class="foto">
-            <img src="foto edit canva/10.png" alt="">
+                <img src="foto edit canva/10.png" alt="">
             </div>
             <div class="foto">
-            <img src="foto edit canva/1.png">
+                <img src="foto edit canva/1.png">
             </div>
             <div class="foto">
-            <img src="foto edit canva/3.png">
+                <img src="foto edit canva/3.png">
             </div>
             <div class="foto">
-            <img src="foto edit canva/4.png">   
+                <img src="foto edit canva/4.png">
             </div>
             <div class="foto">
-            <img src="foto edit canva/8.png">   
+                <img src="foto edit canva/8.png">
             </div>
             <div class="foto">
-            <img src="foto edit canva/foto10.jpg"> 
+                <img src="foto edit canva/foto10.jpg">
             </div>
             <div class="foto">
-            <img src="foto edit canva/2.png">    
-            </div> 
-            <div class="foto">
-            <img src="foto edit canva/9.png">    
-            </div> 
-            <div class="foto">
-            <img src="foto edit canva/6.png">    
-            </div> 
-            <div class="foto">
-            <img src="foto edit canva/7.png">   
+                <img src="foto edit canva/2.png">
             </div>
-         </div>    
-           
-           
-         
-           
-      
-            <br>
-        <button id="lokasi" onclick="maps()">Lihat Lokasi</button>
-            <br><br>
+            <div class="foto">
+                <img src="foto edit canva/9.png">
+            </div>
+            <div class="foto">
+                <img src="foto edit canva/6.png">
+            </div>
+            <div class="foto">
+                <img src="foto edit canva/7.png">
+            </div>
+        </div>
 
-        <a href="https://wa.me/6285780038380" target="_blank">
 
-        <button>Konfirmasi Kehadiran</button></a>
 
-        <h3 id="ucapan">Ucapan & Doa</h3>
 
-        <input type="text" id="namaUcapan" placeholder="Nama Anda">
 
+        <br>
+      <button class="btn-close" id="lokasi" onclick="maps()">Lihat Lokasi</button>
         <br><br>
 
-        <textarea id="pesanUcapan" placeholder="Tulis ucapan..." rows="3"></textarea>
+        <a href="https://wa.me/6285711475695" target="_blank"></a>
 
-        <br><br>
+   
 
-        <button onclick="kirimUcapan()">Kirim</button>
+     <h3 id="ucapan">Ucapan & Doa</h3>
 
-        <div id="listUcapan"></div>
+<input type="text" id="namaUcapan" placeholder="Nama Anda">
 
-         <h3 id="hadiah">Amplop Digital</h3>
+<br><br>
 
-            <p>Bank BCA</p>
-            <p id="rek">1234567890</p>
-            <p>a.n Karsih he he he...</p>
+<select id="kehadiran">
+<option value="Hadir">Hadir</option>
+<option value="Tidak Hadir">Tidak Hadir</option>
+</select>
+
+<br><br>
+
+<textarea id="pesanUcapan" placeholder="Tulis ucapan..." rows="3"></textarea>
+
+<br><br>
+
+<button class="btn-close" onclick="kirimUcapan()">Kirim</button>
+
+<h3>Jumlah Tamu Hadir</h3>
+<p id="jumlahHadir">0</p>
+
+<div id="listUcapan"></div>
+
+        <h3 id="hadiah">Amplop Digital</h3>
+
+        <p>Bank BCA</p>
+        <p id="rek">1234567890</p>
+        <p>a.n Karsih ...</p>
+
+        
+       <button class="btn-close" onclick="copy()">Copy Rekening</button>
 
         <h3 id="penutup">Terima Kasih</h3>
-            <p>Merupakan suatu kehormatan bagi kami apabila Bapak/Ibu berkenan hadir.</p>
+        <p>Merupakan suatu kehormatan bagi kami apabila Bapak/Ibu berkenan hadir.</p>
 
-        <button onclick="copy()">Copy Rekening</button>
-            <br><br>
+        <br><br>
         <button class="btn-close" onclick="Close()">Close</button>
 
     </div>
 
-   <audio id="musik" loop>
-<source src="03._Christina_Perri_A_Thousand_Years.mp3" type="audio/mpeg">
-</audio>
+    <audio id="musik" loop>
+        <source src="03._Christina_Perri_A_Thousand_Years.mp3" type="audio/mpeg">
+    </audio>
 
-<script>
+    <script>
         const urlParams = new URLSearchParams(window.location.search);
 
         const nama = urlParams.get("to");
 
-    if(nama){
+        if (nama) {
 
-        document.getElementById("namaTamu").innerText = nama;
+            document.getElementById("namaTamu").innerText = nama;
 
-    }
+        }
 
 
-  
+
 
         /* COUNTDOWN */
 
@@ -700,42 +767,42 @@
 
         setInterval(function () {
 
-        var sekarang = new Date().getTime();
-        var jarak = tanggal - sekarang;
+            var sekarang = new Date().getTime();
+            var jarak = tanggal - sekarang;
 
-        var hari = Math.floor(jarak / (1000 * 60 * 60 * 24));
-        var jam = Math.floor((jarak % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var menit = Math.floor((jarak % (1000 * 60 * 60)) / (1000 * 60));
-        var detik = Math.floor((jarak % (1000 * 60)) / 1000);
+            var hari = Math.floor(jarak / (1000 * 60 * 60 * 24));
+            var jam = Math.floor((jarak % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var menit = Math.floor((jarak % (1000 * 60 * 60)) / (1000 * 60));
+            var detik = Math.floor((jarak % (1000 * 60)) / 1000);
 
-        document.getElementById("days").innerHTML = hari;
-        document.getElementById("hours").innerHTML = jam;
-        document.getElementById("minutes").innerHTML = menit;
-        document.getElementById("seconds").innerHTML = detik;
+            document.getElementById("days").innerHTML = hari;
+            document.getElementById("hours").innerHTML = jam;
+            document.getElementById("minutes").innerHTML = menit;
+            document.getElementById("seconds").innerHTML = detik;
 
         }, 1000);
 
         /* MAPS */
-        function maps(){
+        function maps() {
             window.open("https://maps.google.com/?q=Lokasi+Pernikahan+Anda");
-}
+        }
 
         /* COPY REKENING */
 
         function copy() {
 
-        var rek = document.getElementById("rek").innerText;
+            var rek = document.getElementById("rek").innerText;
 
             navigator.clipboard.writeText(rek);
 
-        alert("Nomor rekening berhasil di copy");
+            alert("Nomor rekening berhasil di copy");
 
-    }
-        window.onload = function(){
-        document.getElementById("loading").style.display="none";
-    }
-        
-           
+        }
+        window.onload = function () {
+            document.getElementById("loading").style.display = "none";
+        }
+
+
 
     </script>
     <div id="popup" style="
@@ -785,88 +852,198 @@
             ">✕</button>
     </div>
 
-<script>
+    <script>
 
         const gambar = document.querySelectorAll(".gallery img");
         const popup = document.getElementById("popup");
         const popupImg = document.getElementById("popupImg");
 
-        let indexFoto = 0;gambar.forEach((img, index) => {
+        let indexFoto = 0; gambar.forEach((img, index) => {
             img.addEventListener("click", function () {
-            popup.style.display = "flex";
-            popupImg.src = this.src;
-            indexFoto = index;
+                popup.style.display = "flex";
+                popupImg.src = this.src;
+                indexFoto = index;
             });
         });
 
-        function tutupFoto(){
+        function tutupFoto() {
             popup.style.display = "none";
         }
 
-        function nextFoto(){
-            if(indexFoto < gambar.length - 1){
-            indexFoto++;
-            popupImg.src = gambar[indexFoto].src;
+        function nextFoto() {
+            if (indexFoto < gambar.length - 1) {
+                indexFoto++;
+                popupImg.src = gambar[indexFoto].src;
             }
         }
 
-        function prevFoto(){
-            if(indexFoto > 0){
-            indexFoto--;
-            popupImg.src = gambar[indexFoto].src;
+        function prevFoto() {
+            if (indexFoto > 0) {
+                indexFoto--;
+                popupImg.src = gambar[indexFoto].src;
             }
         }
-        function kirimUcapan(){
+        function kirimUcapan() {
 
-        var nama = document.getElementById("namaUcapan").value;
-        var pesan = document.getElementById("pesanUcapan").value;
+           var nama = document.getElementById("namaUcapan").value;
+    var pesan = document.getElementById("pesanUcapan").value;
 
-        var list = document.getElementById("listUcapan");
+    var text = "Ucapan dari: " + nama + "\n\n" + pesan;
 
-        var div = document.createElement("div");
+    var url = "https://wa.me/6285711475695?text=" + encodeURIComponent(text);
 
-        div.innerHTML = "<b>"+nama+"</b><br>"+pesan+"<hr>";
-
-        list.appendChild(div);
-
-        document.getElementById("namaUcapan").value="";
-        document.getElementById("pesanUcapan").value="";
-
-    }
-
-</script>
-<script>
-
-    function Close(){
-
-        document.getElementById("isi").style.display = "none";
-        document.getElementById("cover").style.display="flex";
-
-    var musik = document.getElementById("musik");
-        musik.pause();      // menghentikan lagu
-        musik.currentTime = 0; // mengembalikan lagu ke awal
-
-    }
-function Open(){
-
-document.getElementById("cover").style.display="none";
-document.getElementById("isi").style.display="block";
-
-var musik = document.getElementById("musik");
-
-musik.volume = 0.5;
-
-musik.play().catch(function(error){
-console.log("autoplay diblok browser");
-});
+    window.open(url, "_blank");
 
 }
+    </script>
+    <script>
+
+        function Close() {
+
+            document.getElementById("isi").style.display = "none";
+            document.getElementById("cover").style.display = "flex";
+
+            var musik = document.getElementById("musik");
+            musik.pause();      // menghentikan lagu
+            musik.currentTime = 0; // mengembalikan lagu ke awal
+
+        }
+        function Open() {
+
+            document.getElementById("cover").style.display = "none";
+            document.getElementById("isi").style.display = "block";
+
+            var musik = document.getElementById("musik");
+
+            musik.volume = 0.5;
+
+            musik.play().catch(function (error) {
+                console.log("autoplay diblok browser");
+            });
+
+        }
+    </script>
+    <script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getDatabase, ref, push, onValue, remove } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+const params = new URLSearchParams(window.location.search);
+const isAdmin = params.get("admin") === "true";
+const firebaseConfig = {
+  apiKey: "AIzaSyCw-amKDBXqWLj_9hbU-x1JytIT7s9sjko",
+  authDomain: "undangan-pernikahan-d0be6.firebaseapp.com",
+  databaseURL: "https://undangan-pernikahan-d0be6-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "undangan-pernikahan-d0be6",
+  storageBucket: "undangan-pernikahan-d0be6.firebasestorage.app",
+  messagingSenderId: "712767560995",
+  appId: "1:712767560995:web:34792369dc09472a6b8096"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+
+const ucapanRef = ref(db, "ucapan");
+
+window.kirimUcapan = function(){
+
+let nama = document.getElementById("namaUcapan").value;
+let hadir = document.getElementById("kehadiran").value;
+let pesan = document.getElementById("pesanUcapan").value;
+
+push(ucapanRef,{
+nama:nama,
+hadir:hadir,
+pesan:pesan
+});
+
+let text = "Ucapan dari: "+nama+"\nKehadiran: "+hadir+"\n\n"+pesan;
+
+let url = "https://wa.me/6285711475695?text="+encodeURIComponent(text);
+
+window.open(url,"_blank");
+
+document.getElementById("namaUcapan").value="";
+document.getElementById("pesanUcapan").value="";
+
+}
+onValue(ucapanRef,(snapshot)=>{
+
+let data = snapshot.val();
+let list = document.getElementById("listUcapan");
+
+if(!data){
+list.innerHTML="Belum ada ucapan";
+return;
+}
+
+let hadirCount = 0;
+let nomor = 1;
+
+list.innerHTML="";
+
+for(let id in data){
+
+let u = data[id];
+
+if(u.hadir=="Hadir"){
+hadirCount++;
+}
+
+list.innerHTML += `
+<div class="ucapan-item">
+
+<div class="ucapan-nama">
+${nomor}. ${u.nama}
+</div>
+
+<div class="ucapan-hadir">
+Status: ${u.hadir}
+</div>
+
+<div class="ucapan-pesan">
+<strong>Ucapan :</strong> "${u.pesan}"
+</div>
+
+${isAdmin ? `<button onclick="hapusUcapan('${id}')">Hapus</button>` : ""}
+
+</div>
+`;
+nomor++;
+
+}
+
+document.getElementById("jumlahHadir").innerText = hadirCount;
+
+});
+
+
+window.hapusUcapan = function(id){
+
+let password = prompt("Password Admin");
+
+if(password === "admin123"){
+
+remove(ref(db,"ucapan/"+id));
+
+}
+
+}
+
+window.hapusUcapan=function(id){
+
+let password=prompt("Password Admin");
+
+if(password==="admin123"){
+
+remove(ref(db,"ucapan/"+id));
+
+}
+
+}
+
 </script>
 
-            
+
 </body>
 
 </html>
-
-
-
